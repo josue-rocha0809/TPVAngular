@@ -1,0 +1,75 @@
+
+<body class="text-center">
+
+
+  <main class="form-signin">
+
+
+    <form>
+      <img
+        class="mb-4"
+        src="../../../assets/EasyData.PNG"
+        alt=""
+        width="230"
+        height="100"
+      />
+      <h1 class="h3 mb-3 fw-normal">Iniciar sesion</h1>
+
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          [(ngModel)]="user.username"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <label for="floatingInput">Usuario</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          [(ngModel)]="user.password"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+
+      <button
+        class="w-100 btn btn-lg btn-primary"
+        type="submit"
+        (click)="onLogin()"
+      >
+        Iniciar sesion
+      </button>
+      
+      <div
+        class="modal"
+        tabindex="-1"
+        role="dialog"
+        [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Error</h4>
+            </div>
+            <div class="modal-body">
+              <p>Usuario o contraseña incorrecta</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger"
+                      (click)="closePopup()">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mt-5 mb-3 text-muted">&copy;2022</p>
+    </form>
+  </main>
+</body>

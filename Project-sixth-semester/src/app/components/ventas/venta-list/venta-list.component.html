@@ -1,0 +1,61 @@
+<div class="p-7 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-3">
+    <h2>Ventas</h2>
+  <div class="container">
+    
+        <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th scope="col">ID de Venta</th>
+            <th scope="col">Productos vendidos</th>
+            <th scope="col">Fecha de venta</th>
+            <th scope="col">Total de venta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>
+            <ul *ngFor="let ven of item">
+              <li>
+                {{ ven.id }}
+              </li>
+            </ul>
+          </td>
+          <td>
+            <ul *ngFor="let ven of item">
+                <li>
+                  {{ ven.cantidad_de_productos }}
+                </li>
+              </ul>
+          </td>
+          <td>
+            <ul *ngFor="let ven of item">
+                <li>
+                  {{ ven.fecha }}
+                </li>
+              </ul>
+          </td>
+          <td>
+            <ul *ngFor="let ven of item">
+                <li>
+                  {{ ven.total }}
+                </li>
+              </ul>
+          </td>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshVentas()">
+        </ngb-pagination>
+      
+        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshVentas()">
+          <option [ngValue]="2">2 Ventas por pag</option>
+          <option [ngValue]="4">4 Ventas por pag</option>
+          <option [ngValue]="6">6 Ventas por pag</option>
+        </select>
+      </div>
+    </div>
+      </div>
+    </div>
+    
+  </div>
